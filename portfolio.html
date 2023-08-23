@@ -1,1315 +1,536 @@
-:root {
-  --iris: #4d5ae5;
-  --navyblue: #2e2f42;
-  --cloud: #f4f4fd;
-  --cornflower: #e7e9fc;
-  --ocean: #404bbf;
-  --slate: #434455;
-  --white: #fff;
-  --green: #31d0aa;
-  --lightslate: #8e8f99;
-  --dairy: #fcfcfc;
-}
-
-html {
-  font-size: 32px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  letter-spacing: 0.03em;
-  color: var(--slate);
-  overflow-x: hidden;
-}
-
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.link {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* HEADER */
-
-.logo-link {
-  font-family: "Raleway", sans-serif;
-  font-size: 0;
-  font-weight: 800;
-  text-decoration: none;
-  margin-bottom: 16px;
-  /* display: flex; */
-}
-
-.logo-link > span {
-  font-size: 18px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-}
-
-.logo,
-.studio {
-  display: inline-block;
-}
-
-.logo {
-  color: var(--iris);
-}
-
-.page-header {
-  border-bottom: 1px solid var(--cornflower);
-}
-
-.page {
-  position: relative;
-}
-
-.page::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 0;
-  height: 4px;
-  border: 2px solid transparent;
-  border-radius: 4px;
-  bottom: -1px;
-  transition: width 250ms ease-in-out, background-color 250ms ease-in-out;
-}
-
-.page.current::after {
-  width: 100%;
-  background-color: var(--ocean);
-  border: 2px solid var(--ocean);
-}
-
-.page:hover::after,
-.page:focus::after {
-  border: 2px solid var(--ocean);
-  width: 100%;
-  background-color: var(--ocean);
-}
-
-/* END OF HEADER */
-
-.button {
-  font-family: inherit;
-  border-radius: 4px;
-  border-color: transparent;
-  cursor: pointer;
-  font-size: 16px;
-  letter-spacing: 0.03em;
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out,
-    box-shadow 250ms ease-in-out;
-}
-
-.button.primary {
-  color: var(--white);
-  background-color: var(--iris);
-  line-height: 1.87;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  padding: 16px 32px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
-
-.button.primary:hover,
-.button.primary:focus {
-  background-color: var(--ocean);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out,
-    box-shadow 250ms ease-in-out;
-}
-
-.section {
-  /* padding: 120px 0; for Desktop */
-  padding: 96px 0;
-  margin: auto 0;
-  width: 100%;
-  overflow-x: hidden;
-
-  @media screen and (min-width: 1158px) {
-    padding: 120px 0;
-  }
-}
-
-.section.no-top-padding {
-  /* padding-top: 0; */
-  display: none;
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-
-  @media screen and (min-width: 1158px) {
-    display: contents;
-    /* padding-bottom: 120px; */
-  }
-}
-
-.container {
-  /*width: 1200px; for Desktop*/
-  /* width: 428px; */
-  padding: 0 15px;
-  margin: 0 auto;
-  width: 100%;
-
-  @media screen and (min-width: 428px) {
-    width: 428px;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 768px;
-  }
-
-  @media screen and (min-width: 1158px) {
-    width: 1158px;
-  }
-}
-
-/*@media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-  }
-}*/
-
-.menu,
-.navigation {
-  display: flex;
-  align-items: center;
-}
-
-.nav-menu {
-  /* display: flex; */
-  display: none;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.section-title {
-  /* font-size: 36px; for Desktop */
-  line-height: 1.17;
-  color: var(--navyblue);
-  text-align: center;
-  font-weight: 700;
-  margin-bottom: 50px;
-
-  font-size: 24px;
-
-  @media screen and (min-width: 1200px) {
-    font-size: 36px;
-  }
-}
-
-.benefits {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
-  align-content: center;
-  text-align: center;
-
-  @media screen and (min-width: 1200px) {
-    flex-wrap: nowrap;
-  }
-}
-
-.benefits .item {
-  /* flex-basis: calc(100% / 4 - 30px); */
-  width: 100%;
-  margin-left: 30px;
-  margin-top: 30px;
-  align-items: center;
-
-  @media screen and (min-width: 768px) {
-    flex-basis: calc(100% / 2 - 30px);
-  }
-
-  @media screen and (min-width: 1200px) {
-    flex-basis: calc(100% / 4 - 30px);
-    align-content: center;
-    text-align: center;
-  }
-}
-
-.benefits .title {
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--navyblue);
-  line-height: 1.14;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-.benefits .description {
-  color: var(--slate);
-  line-height: 1.71;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-/*.icon-container*/
-.benefits-icon {
-  display: none;
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-
-  @media screen and (min-width: 1158px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    background-color: var(--cornflower);
-    width: 264px;
-    height: 112px;
-    margin-bottom: 8px;
-    border-radius: 4px;
-    background: var(--cloud, #f4f4fd);
-  }
-}
-
-.instagram,
-.linkedin,
-.twitter,
-.facebook {
-  fill: var(--cloud);
-}
-
-.what-we-do {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 120px;
-  /* margin-left: -30px;
-  margin-top: -30px; */
-}
-
-.what-we-do .item {
-  /* flex-basis: calc(100% / 3 - 30px); */
-  /* margin-left: 30px;
-  margin-top: 30px; */
-  margin: auto;
-
-  @media screen and (min-width: 768px) {
-    flex-basis: calc(100% / 2 - 30px);
-  }
-
-  @media screen and (min-width: 1200px) {
-    flex-basis: calc(100% / 3 - 30px);
-    align-content: center;
-    text-align: center;
-  }
-}
-
-.team {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 64px;
-  row-gap: 64px;
-  flex-wrap: wrap;
-  /* margin-left: -30px;
-  margin-top: -30px; */
-
-  @media screen and (min-width: 1158px) {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-  }
-}
-
-.team-item {
-  /* flex-basis: calc(100% / 2 - 30px); */
-  /* background-color: lightblue; */
-  /* margin-left: 30px;
-  margin-top: 30px; */
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  /* margin: 0 auto; */
-  padding-bottom: 30px;
-  background-color: var(--white);
-  border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-
-  @media screen and (min-width: 768px) {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 24px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media screen and (min-width: 1158px) {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-  }
-}
-
-.social-team {
-  gap: 24px;
-  display: flex;
-  justify-content: center;
-}
-
-.social-team .link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* margin-top: 8px; */
-  background-color: var(--iris);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: #f4f4fd;
-}
-
-.icon-item {
-  width: 40px;
-  height: 40px;
-  margin-top: 8px;
-}
-
-.icon-item .link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* margin-top: 8px; */
-  background-color: var(--iris);
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  color: #f4f4fd;
-  fill: currentColor;
-  transition: background-color 250ms ease-in-out;
-}
-
-.social-team .icon-item .link:hover,
-.social-team .icon-item .link:focus {
-  background-color: var(--ocean);
-}
-
-.studio {
-  color: var(--navyblue);
-}
-
-.contacts-menu {
-  display: none;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
-}
-
-.hero {
-  background-image: linear-gradient(
-      180deg,
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url("../images/hero-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding: 200px 0;
-  text-align: center;
-  height: 600px;
-
-  /* @media screen and (min-width: 768px) {
-    background-image: unset;
-  } */
-}
-
-/* .hero-container {
-  width: auto;
-  height: auto;
-
-  background-image: linear-gradient(
-      180deg,
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url("../images/hero-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-
-  @media screen and (min-width: 768px) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url("../images/hero-bg.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-} */
-
-.nav-menu .page,
-.contacts-menu .contact {
-  font-weight: 500;
-  color: var(--navyblue);
-  text-decoration: none;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 31px;
-  transition: color 250ms ease-in-out;
-}
-
-.contacts-menu .contact {
-  color: var(--slate);
-  text-decoration: none;
-  font-weight: 400;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-}
-
-.nav-menu {
-  margin-left: 93px;
-}
-
-.contact-menu {
-  margin-left: auto;
-}
-
-.nav-menu .item:not(:last-child),
-.contacts-menu .item:not(:last-child) {
-  margin-right: 50px;
-}
-
-.nav-menu .page:hover,
-.nav-menu .page:focus,
-.nav-menu .page.current,
-.contacts-menu .contact:hover,
-.contacts-menu .contact:focus {
-  color: var(--iris);
-}
-
-.hero-title {
-  /* font-size: 56px; */
-  font-size: 36px;
-  text-align: center;
-  line-height: 1.07;
-  letter-spacing: 0.04em;
-  color: var(--white);
-  margin-bottom: 30px;
-
-  @media screen and (min-width: 768px) {
-    font-size: 56px;
-  }
-}
-
-.team .name,
-.team .position {
-  line-height: 1.19;
-  text-align: center;
-}
-
-.team .name {
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--navyblue);
-  padding-top: 30px;
-  padding-bottom: 10px;
-}
-
-.team .position {
-  color: var(--slate);
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.partners {
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-
-  @media screen and (min-width: 1200px) {
-    flex-wrap: nowrap;
-  }
-}
-
-.partners .item {
-  width: 168px;
-  height: 88px;
-
-  @media screen and (min-width: 768px) {
-    flex-basis: calc(100% / 3 - 30px);
-  }
-
-  @media screen and (min-width: 1200px) {
-    flex-basis: calc(100% / 6 - 30px);
-    align-content: center;
-    text-align: center;
-  }
-}
-
-.partners .link {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  border: 1px solid var(--lightslate);
-  border-radius: 4px;
-  justify-content: center;
-  align-items: center;
-  color: var(--lightslate);
-  transition: color 250ms ease-in-out, border-color 250ms ease-in-out;
-}
-
-.partners .item .icon {
-  fill: currentColor;
-}
-
-.partners .link:hover,
-.partners .link:focus {
-  color: var(--ocean);
-  border-color: var(--ocean);
-}
-
-/* FOOTER */
-
-.footer {
-  display: flex;
-  flex-wrap: wrap;
-  /* margin-top: -12px;
-  margin-left: -50px; */
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: left;
-    flex-wrap: wrap;
-    padding-left: 108px;
-    /* flex-basis: calc(100% / 3 - 30px); */
-    /* align-items: center; */
-    /* text-align: center; */
-  }
-
-  @media screen and (min-width: 1158px) {
-    margin: 0 auto;
-    padding: 0;
-    width: 1158px;
-    padding-top: 101.5px;
-    /* padding-left: 0px; */
-    /* flex-basis: calc(100% / 3 - 30px); */
-    /* align-items: center; */
-    /* text-align: center; */
-  }
-}
-
-.footer-address {
-  display: flex;
-  flex-direction: column;
-  width: 268px;
-  text-align: center;
-  margin-bottom: 72px;
-  /* margin-top: 12px; */
-  /* margin-right: 123px; */
-
-  @media screen and (min-width: 768px) {
-    /* margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto; */
-    width: 268px;
-    margin-left: 0;
-    margin-bottom: 72px;
-    text-align: left;
-  }
-
-  @media screen and (min-width: 1158px) {
-    width: 264px;
-    margin-left: 0;
-    margin-bottom: 72px;
-    text-align: left;
-    /* display: flex; */
-    /* margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto; */
-  }
-}
-
-.footer-block {
-  /* margin-top: 12px; */
-  margin-left: 24px;
-  text-align: center;
-  width: 208px;
-  margin-bottom: 74px;
-
-  @media screen and (min-width: 768px) {
-    width: 208px;
-    margin-left: 24px;
-    text-align: left;
-    /* margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto; */
-  }
-
-  @media screen and (min-width: 1158px) {
-    width: 208px;
-    margin-left: 120px;
-    display: inline;
-    text-align: left;
-    /* margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto; */
-  }
-}
-
-.footer-newsletter {
-  margin-left: 0px;
-  width: 100%;
-  padding: 0 15px;
-  text-align: center;
-  display: block;
-
-  @media screen and (min-width: 768px) {
-    width: 453px;
-    padding: 0;
-    text-align: left;
-    /* margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto; */
-  }
-
-  @media screen and (min-width: 1158px) {
-    width: 453px;
-    margin-left: 80px;
-    padding: 0;
-    text-align: left;
-    /* margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto; */
-  }
-}
-
-.email {
-  border-radius: 4px;
-  border: 1px solid var(--white, #fff);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  text-decoration: none;
-}
-
-.footer-heading {
-  line-height: 1.17;
-  color: var(--white);
-  font-weight: 500;
-  margin-bottom: 16px;
-  text-align: center;
-
-  @media screen and (min-width: 768px) {
-    text-align: left;
-  }
-
-  @media screen and (min-width: 1158px) {
-    text-align: left;
-  }
-}
-
-.page-footer {
-  /* padding: 60px 0 60px 60px; */
-  padding: 96px 0;
-  width: 100%;
-  background-color: var(--navyblue);
-  height: 664px;
-  /* overflow-x: hidden; */
-
-  @media screen and (min-width: 768px) {
-    width: 100%;
-    height: 456px;
-    padding-top: 97.5px;
-  }
-
-  @media screen and (min-width: 1158px) {
-    padding: 0;
-    height: 312px;
-    min-width: 1440px;
-  }
-}
-
-.studio-footer {
-  color: var(--cloud);
-}
-
-.logo-link.footer {
-  margin-bottom: 20px;
-}
-
-.footer-description {
-  color: var(--cloud);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: left;
-  letter-spacing: 0.32px;
-  /* padding-top: 17px; */
-}
-
-.social-footer {
-  gap: 16px;
-  padding-top: 10px;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.social-footer .link:hover,
-.social-footer .link:focus {
-  background-color: var(--green);
-}
-
-.newsletter-button {
-  background-color: var(--iris);
-  color: var(--cornflower);
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.64px;
-  margin: 0 auto;
-  width: 150px;
-  height: 40px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.newsletter-button:hover,
-.newsletter-button:focus {
-  background-color: var(--ocean);
-}
-
-.form-input-newsletter {
-  background: transparent;
-  margin-top: 16px;
-  /* margin-right: 20px; */
-  margin-bottom: 16px;
-  font-size: 12px;
-  outline: none;
-  height: 40px;
-  width: 100%;
-  padding: 11px 16px 11px 10px;
-  border: 1px solid white;
-  border-radius: 4px;
-  line-height: 0.87px;
-  letter-spacing: 0.01em;
-  color: var(--cloud);
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  @media screen and (min-width: 768px) {
-    width: 264px;
-    margin-right: 24px;
-  }
-
-  @media screen and (min-width: 1158px) {
-    width: 264px;
-    margin-right: 24px;
-  }
-}
-
-.newsletter-icon {
-  fill: var(--white);
-  margin-left: 10px;
-}
-
-.newsletter-icon-container {
-  position: absolute;
-  justify-content: center;
-  text-align: center;
-}
-
-.form-input-newsletter::placeholder {
-  color: white;
-}
-
-/* End of FOOTER */
-
-/* PORTFOLIO - Button Filters */
-.button.filter {
-  background: var(--cloud);
-  color: var(--iris);
-  font-weight: 500;
-  line-height: 1.62;
-  padding: 5px 22px;
-}
-
-.button.filter:hover,
-.button.filter:focus,
-.button.filter.current {
-  background-color: var(--ocean);
-  color: var(--cloud);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-}
-
-.filters {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
-}
-
-.filters .space + .space {
-  margin-left: 8px;
-}
-/*End of Button Filters */
-
-/* PORTFOLIO - Project */
-
-.project .name {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 2;
-  letter-spacing: 0.04em;
-  color: var(--navyblue);
-  margin-bottom: 4px;
-}
-
-.project .type {
-  color: var(--slate);
-  font-weight: 400;
-  line-height: 1.87;
-  font-size: 16px;
-}
-
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
-}
-
-.project-card {
-  flex-basis: calc(100% / 3 - 30px);
-  margin-left: 30px;
-  margin-top: 30px;
-}
-
-.project-card:hover {
-  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-}
-
-.cover-wrap {
-  position: relative;
-  overflow: hidden;
-}
-
-.cover-text {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  padding: 40px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.32px;
-  background-color: var(--iris);
-  color: var(--cloud);
-  transform: translateY(101%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-card:hover .cover-text {
-  transform: translateY(0);
-}
-
-.substrate {
-  background-color: var(--white);
-  padding: 20px 24px;
-  border: 1px solid #eeeeee;
-  border-top: 0;
-}
-
-/*End of Project */
-
-/* MODAL  WINDOW*/
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal {
-  padding: 72px 24px 24px 24px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 428px;
-  /* min-height: 584px; */
-  height: 100vh;
-
-  @media screen and (min-width: 428px) {
-    height: auto;
-  }
-
-  border-radius: 4px;
-  background-color: var(--dairy);
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-radius: 4px;
-}
-
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0);
-}
-
-.modal-close {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  background-color: var(--cornflower);
-  color: var(--navyblue);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  cursor: pointer;
-
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-close-icon {
-  fill: currentColor;
-}
-
-.modal-close:hover,
-.modal-close:focus {
-  background-color: var(--ocean);
-  color: white;
-}
-
-.is-hidden {
-  visibility: none;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.modal-title {
-  font-weight: 500;
-  text-align: center;
-  color: var(--slate);
-  margin-bottom: 34px;
-}
-
-.form-field {
-  position: relative;
-  margin-bottom: 30px;
-  font-size: 12px;
-  line-height: 1.1;
-  color: var(--lightslate);
-}
-
-.form-label {
-  position: absolute;
-  top: -20px;
-}
-
-.form-label-textarea {
-  position: relative;
-  margin-bottom: 16px;
-  font-size: 12px;
-  line-height: 1.1;
-  color: var(--lightslate);
-}
-
-.form-input,
-.form-textarea {
-  display: block;
-  width: 360px;
-  height: 40px;
-  padding: 11px 0px 11px 38px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-
-  line-height: 0.87px;
-  letter-spacing: 0.01em;
-
-  color: var(--slate);
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-input:hover,
-.form-input:focus,
-.form-textarea:hover,
-.form-textarea:focus {
-  outline: none;
-  border-color: var(--iris);
-}
-
-.form-textarea {
-  padding-left: 16px;
-  resize: none;
-  height: 128px;
-}
-
-.form-textarea::placeholder {
-  color: var(--lightslate);
-}
-
-.form-terms {
-  display: flex;
-  justify-content: flex-start;
-  width: 360px;
-  height: 16px;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 34px;
-}
-
-.form-button {
-  background-color: var(--iris);
-  color: var(--cornflower);
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.64px;
-  margin: 0 auto;
-  display: block;
-  width: 169px;
-  height: 56px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-}
-
-.form-button:hover,
-.form-button:focus {
-  background-color: var(--ocean);
-}
-
-.modal-user-icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-input:focus + .modal-user-icon,
-.form-input:hover + .modal-user-icon {
-  fill: var(--iris);
-}
-
-.form-checkbox {
-  appearance: none;
-  position: absolute;
-}
-
-.form-checkbox-icon {
-  fill: none;
-  border: 1px solid var(--lightslate);
-  border-radius: 2px;
-  display: inline-block;
-  width: 16px;
-}
-
-.agree-text {
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--lightslate);
-  line-height: 1.4;
-}
-
-.form-checkbox:checked + .form-checkbox-icon {
-  background-color: var(--iris);
-  border-color: var(--iris);
-  fill: var(--cloud);
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* End of MODAL WINDOW */
-
-/* HAMBURGER MENU ICON */
-
-/* .hamburger-menu-icon {
-  display: none;
-} */
-
-.menu-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: 30px;
-  padding: 0;
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
-  border-radius: 50%;
-  outline: none;
-  color: var(--cloud);
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-}
-
-.menu-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  padding: 48px 48px;
-  background-color: var(--dairy);
-  z-index: 200;
-
-  transform: translateX(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-
-  @media screen and (min-width: 1158px) {
-    display: none;
-  }
-}
-
-.menu-container.is-open {
-  transform: translateX(0);
-  /* transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
-}
-
-/* Mobile Navigation */
-
-.mob-menu-item {
-  margin-bottom: 32px;
-}
-
-.mob-menu-link {
-  display: block;
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 1.18;
-  letter-spacing: 0.02em;
-  color: var(--slate);
-
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mob-menu-link:hover,
-.mob-menu-link:focus,
-.mob-menu-link.current {
-  color: var(--iris);
-}
-
-.mob-address {
-  /* address doesn't inherit font style */
-  font-style: normal;
-  font-size: 36px;
-  margin-bottom: 32px;
-}
-
-.mob-address-link {
-  /* Link tags doesn't inherit colors */
-  color: inherit;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mob-address-link:hover,
-.mob-address-link:focus {
-  color: var(--iris);
-}
-
-.mob-contact {
-  font-size: 20px;
-}
-
-/* Mobile Socials */
-.mob-social-list {
-  display: flex;
-  justify-content: space-between;
-}
-
-.mob-social-item {
-  width: 40px;
-  height: 40px;
-}
-
-.mob-social-link {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  color: var(--cloud);
-  background-color: var(--iris);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mob-social-link:hover,
-.mob-social-link:focus {
-  background-color: var(--slate);
-}
-
-.mob-social-icon {
-  fill: currentColor;
-}
-
-/* End of HAMBURGER MENU ICON */
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!--Header-->
+    <header class="page-header">
+      <!-- Navigation bar -->
+      <div class="container menu">
+        <nav class="navigation">
+          <a class="logo-link" href="index.html">
+            <span class="logo">WEB</span>
+            <span class="studio">STUDIO</span></a
+          >
+          <ul class="nav-menu list">
+            <li class="nav-item item">
+              <a class="page link" href="./index.html">Studio</a>
+            </li>
+            <li class="nav-item item">
+              <a class="page current link" href="./portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item item">
+              <a class="page link" href="">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="contacts-menu list">
+          <li class="contacts-item item">
+            <a class="contact link" href="mailto:info@devstudio.com"
+              >info@devstudio.com</a
+            >
+          </li>
+          <li class="contacts-item item">
+            <a class="contact link" href="tel:+110001111111"
+              >+11 (000) 111-11-11</a
+            >
+          </li>
+        </ul>
+
+        <!-- Hamburger Menu Icon -->
+        <button
+          class="menu-toggle js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="hamburger-menu" width="32" height="22">
+            <use href="./images/icons.svg#icon-hamburger-menu"></use>
+          </svg>
+        </button>
+        <!-- End of Hamburger Menu Icon -->
+      </div>
+      <!--End of Navigation bar-->
+    </header>
+    <!--end of Header-->
+
+    <!--main-->
+    <main>
+      <!-- Section 1 - Buttons -->
+      <section class="section">
+        <div class="container">
+          <ul class="filters list">
+            <li class="space">
+              <button class="button filter current" type="button">All</button>
+            </li>
+            <li class="space">
+              <button class="button filter" type="button">Web Site</button>
+            </li>
+            <li class="space">
+              <button class="button filter" type="button">App</button>
+            </li>
+            <li class="space">
+              <button class="button filter" type="button">Design</button>
+            </li>
+            <li class="space">
+              <button class="button filter" type="button">Marketing</button>
+            </li>
+          </ul>
+
+          <!--Section 2-->
+          <ul class="projects list">
+            <!-- Image 0 -->
+            <li class="project-card">
+              <a href="" class="project link">
+                <div class="cover-wrap">
+                  <img
+                    src="images/port-img.jpg"
+                    alt="portimg1"
+                    width="370"
+                    height="294"
+                    class="image"
+                  />
+                  <p class="cover-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe nesciunt tempore ipsam sapiente mollitia hic illum
+                    voluptas fuga, sed temporibus dolores, molestias
+                    necessitatibus recusandae, dolorum consequatur similique
+                    veniam voluptate sunt.
+                  </p>
+                </div>
+                <div class="substrate">
+                  <h2 class="name">Banking App Interface Concept</h2>
+                  <p class="type">App</p>
+                </div>
+              </a>
+            </li>
+            <!-- Image 1 -->
+            <li class="project-card">
+              <a href="" class="project link">
+                <div class="cover-wrap">
+                  <img
+                    src="images/port-img-2.jpg"
+                    alt="portimg2"
+                    width="370"
+                    height="294"
+                    class="image"
+                  />
+                  <p class="cover-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe nesciunt tempore ipsam sapiente mollitia hic illum
+                    voluptas fuga, sed temporibus dolores, molestias
+                    necessitatibus recusandae, dolorum consequatur similique
+                    veniam voluptate sunt.
+                  </p>
+                </div>
+                <div class="substrate">
+                  <h2 class="name">Cashless Payment</h2>
+                  <p class="type">Marketing</p>
+                </div>
+              </a>
+            </li>
+            <!-- Image 2 -->
+            <li class="project-card">
+              <a href="" class="project link">
+                <div class="cover-wrap">
+                  <img
+                    src="images/port-img-3.jpg"
+                    alt="portimg3"
+                    width="370"
+                    height="294"
+                    class="image"
+                  />
+                  <p class="cover-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe nesciunt tempore ipsam sapiente mollitia hic illum
+                    voluptas fuga, sed temporibus dolores, molestias
+                    necessitatibus recusandae, dolorum consequatur similique
+                    veniam voluptate sunt.
+                  </p>
+                </div>
+                <div class="substrate">
+                  <h2 class="name">Meditation App</h2>
+                  <p class="type">App</p>
+                </div>
+              </a>
+            </li>
+            <!-- Image 3 -->
+            <li class="project-card">
+              <a href="" class="project link">
+                <div class="cover-wrap">
+                  <img
+                    src="images/port-img-4.jpg"
+                    alt="portimg4"
+                    width="370"
+                    height="294"
+                    class="image"
+                  />
+                  <p class="cover-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe nesciunt tempore ipsam sapiente mollitia hic illum
+                    voluptas fuga, sed temporibus dolores, molestias
+                    necessitatibus recusandae, dolorum consequatur similique
+                    veniam voluptate sunt.
+                  </p>
+                </div>
+                <div class="substrate">
+                  <h2 class="name">Tax Service</h2>
+                  <p class="type">Marketing</p>
+                </div>
+              </a>
+            </li>
+            <!-- Image 4 -->
+            <li class="project-card">
+              <a href="" class="project link">
+                <div class="cover-wrap">
+                  <img
+                    src="images/port-img-5.jpg"
+                    alt="portimg5"
+                    width="370"
+                    height="294"
+                    class="image"
+                  />
+                  <p class="cover-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe nesciunt tempore ipsam sapiente mollitia hic illum
+                    voluptas fuga, sed temporibus dolores, molestias
+                    necessitatibus recusandae, dolorum consequatur similique
+                    veniam voluptate sunt.
+                  </p>
+                </div>
+                <div class="substrate">
+                  <h2 class="name">Screen Illustrations</h2>
+                  <p class="type">Design</p>
+                </div>
+              </a>
+            </li>
+            <!-- Image 5 -->
+            <li class="project-card">
+              <a href="" class="project link">
+                <div class="cover-wrap">
+                  <img
+                    src="images/port-img-6.jpg"
+                    alt="portimg6"
+                    width="370"
+                    height="294"
+                    class="image"
+                  />
+                  <p class="cover-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe nesciunt tempore ipsam sapiente mollitia hic illum
+                    voluptas fuga, sed temporibus dolores, molestias
+                    necessitatibus recusandae, dolorum consequatur similique
+                    veniam voluptate sunt.
+                  </p>
+                </div>
+                <div class="substrate">
+                  <h2 class="name">Online Courses</h2>
+                  <p class="type">Marketing</p>
+                </div>
+              </a>
+            </li>
+            <!-- Image 6 -->
+            <li class="project-card">
+              <a href="" class="project link">
+                <div class="cover-wrap">
+                  <img
+                    src="images/port-img-7.jpg"
+                    alt="portimg7"
+                    width="370"
+                    height="294"
+                    class="image"
+                  />
+                  <p class="cover-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe nesciunt tempore ipsam sapiente mollitia hic illum
+                    voluptas fuga, sed temporibus dolores, molestias
+                    necessitatibus recusandae, dolorum consequatur similique
+                    veniam voluptate sunt.
+                  </p>
+                </div>
+                <div class="substrate">
+                  <h2 class="name">Instagram Stories Concept</h2>
+                  <p class="type">Design</p>
+                </div>
+              </a>
+            </li>
+            <!-- Image 7 -->
+            <li class="project-card">
+              <a href="" class="project link">
+                <div class="cover-wrap">
+                  <img
+                    src="images/port-img-8.jpg"
+                    alt="portimg8"
+                    width="370"
+                    height="294"
+                    class="image"
+                  />
+                  <p class="cover-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe nesciunt tempore ipsam sapiente mollitia hic illum
+                    voluptas fuga, sed temporibus dolores, molestias
+                    necessitatibus recusandae, dolorum consequatur similique
+                    veniam voluptate sunt.
+                  </p>
+                </div>
+                <div class="substrate">
+                  <h2 class="name">Organic Food</h2>
+                  <p class="type">Website</p>
+                </div>
+              </a>
+            </li>
+            <!-- Image 8 -->
+            <li class="project-card">
+              <a href="" class="project link">
+                <div class="cover-wrap">
+                  <img
+                    src="images/port-img-9.jpg"
+                    alt="portimg9"
+                    width="370"
+                    height="294"
+                    class="image"
+                  />
+                  <p class="cover-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Saepe nesciunt tempore ipsam sapiente mollitia hic illum
+                    voluptas fuga, sed temporibus dolores, molestias
+                    necessitatibus recusandae, dolorum consequatur similique
+                    veniam voluptate sunt.
+                  </p>
+                </div>
+                <div class="substrate">
+                  <h2 class="name">Fresh Coffee</h2>
+                  <p class="type">Website</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <!--end of main-->
+
+    <!--Footer-->
+    <footer class="page-footer">
+      <div class="container">
+        <!--Main Footer-->
+        <div class="footer">
+          <!--Footer 1-->
+          <div class="footer-address">
+            <a class="logo-link" href="#">
+              <span class="logo">WEB</span>
+              <span class="studio-footer">STUDIO</span></a
+            >
+            <p class="footer-description">
+              Increase the flow of customers and<br />sales for your business
+              with digital<br />
+              marketing & growth solutions.
+            </p>
+          </div>
+
+          <!--Footer 2-->
+          <div class="footer-block">
+            <b class="footer-heading">Social media</b>
+            <ul class="social-footer list">
+              <li class="icon-item">
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel=""
+                  aria-label="Link in Instagram"
+                  class="link"
+                >
+                  <svg class="icon" width="24" height="24">
+                    <use href="./images/icons.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="icon-item">
+                <a
+                  href="https://www.twitter.com"
+                  target="_blank"
+                  rel=""
+                  aria-label="Link in Twitter"
+                  class="link"
+                >
+                  <svg class="icon" width="24" height="24">
+                    <use href="./images/icons.svg#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="icon-item">
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel=""
+                  aria-label="Link in FaceBook"
+                  class="link"
+                >
+                  <svg class="icon" width="24" height="24">
+                    <use href="./images/icons.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="icon-item">
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel=""
+                  aria-label="LinkedIn"
+                  class="link"
+                >
+                  <svg class="icon" width="24" height="24">
+                    <use href="./images/icons.svg#linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!--Footer 3-->
+          <div class="footer-newsletter">
+            <b class="footer-heading">Subscribe</b>
+            <form name="email_newsletter" autocomplete="on">
+              <!-- E-mail -->
+              <label class="form-newsletter">
+                <span class="form-label">E-mail</span>
+                <input
+                  class="form-input-newsletter"
+                  type="email"
+                  name="user-email"
+                  placeholder="E-mail"
+                  required
+                />
+              </label>
+              <button class="newsletter-button button" type="submit">
+                <span class="newsletter-button-container">
+                  Subscribe
+                  <svg class="newsletter-icon" width="24" height="20">
+                    <use href="./images/icons.svg#icon-newsletter"></use>
+                  </svg>
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--end of Footer-->
+
+    <!-- Hamburger close Icon -->
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <div class="mobile-container">
+        <div>
+          <button class="menu-toggle js-close-menu">
+            <svg class="hamburger-menu-close" width="32" height="32">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu-content">
+          <ul class="mob-menu-list list">
+            <li class="mob-menu-item">
+              <a class="mob-menu-link current link" href="./index.html"
+                >Studio</a
+              >
+            </li>
+            <li class="mob-menu-item">
+              <a class="mob-menu-link link" href="./portfolio.html"
+                >Portfolio</a
+              >
+            </li>
+            <li class="mob-menu-item">
+              <a class="mob-menu-link link" href="#contacts">Contacts</a>
+            </li>
+          </ul>
+
+          <!-- Mobile Contacts Address -->
+          <div class="mobile-container-footer">
+            <ul class="mob-address list">
+              <li>
+                <a class="mob-address-link link" href="tel:+380441111111"
+                  >+11 (000) 111-11-11</a
+                >
+              </li>
+              <li>
+                <a class="mob-contact link" href="mailto:info@devstudio.com"
+                  >info@devstudio.com</a
+                >
+              </li>
+            </ul>
+
+            <!-- Mobile Socials -->
+            <ul class="mob-social-list list">
+              <li class="mob-social-item">
+                <a
+                  class="mob-social-link link"
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg class="mob-social-icon" width="20" height="20">
+                    <use href="./images/icons.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="mob-social-item">
+                <a
+                  class="mob-social-link link"
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg class="mob-social-icon" width="20" height="20">
+                    <use href="./images/icons.svg#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="mob-social-item">
+                <a
+                  class="mob-social-link link"
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg class="mob-social-icon" width="20" height="20">
+                    <use href="./images/icons.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="mob-social-item">
+                <a
+                  class="mob-social-link link"
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg class="mob-social-icon" width="20" height="20">
+                    <use href="./images/icons.svg#linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Hamburger Close Icon -->
+
+    <!-- Mobile Menu -->
+    <script src="./js/mobile-menu.js"></script>
+  </body>
+</html>
