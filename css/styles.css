@@ -148,14 +148,15 @@ main {
 .button.primary {
   color: var(--white);
   background-color: var(--iris);
-
+  /* line-height: normal; */
   font-weight: 500;
   letter-spacing: 0.06em;
   padding: 16px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   @media screen and (min-width: 425px) {
-    line-height: 1.87;
+    /* line-height: 1.87; */
+    line-height: normal;
   }
 }
 
@@ -505,7 +506,7 @@ main {
   @media screen and (min-width: 768px) {
     display: block;
     align-items: center;
-    margin-left: auto;
+    margin-left: 122px;
   }
 
   @media screen and (min-width: 1158px) {
@@ -580,6 +581,10 @@ main {
   } */
 }
 
+.contact {
+  font-size: 12px;
+}
+
 .contacts-menu .contact {
   color: var(--slate);
   text-decoration: none;
@@ -596,16 +601,17 @@ main {
 
 .nav-menu {
   margin-left: 93px;
+  gap: 40px;
 }
 
 .contact-menu {
   margin-left: auto;
 }
 
-.nav-menu .item:not(:last-child),
+/* .nav-menu .item:not(:last-child),
 .contacts-menu .item:not(:last-child) {
   margin-right: 50px;
-}
+} */
 
 .nav-menu .page:hover,
 .nav-menu .page:focus,
@@ -665,7 +671,7 @@ main {
   align-items: center;
   justify-content: center;
   row-gap: 72px;
-  column-gap: 16px;
+  column-gap: 24px;
 
   @media screen and (min-width: 1200px) {
     flex-wrap: nowrap;
@@ -676,9 +682,9 @@ main {
   width: 168px;
   height: 88px;
 
-  @media screen and (min-width: 768px) {
+  /* @media screen and (min-width: 768px) {
     flex-basis: calc(100% / 3 - 30px);
-  }
+  } */
 
   @media screen and (min-width: 1200px) {
     flex-basis: calc(100% / 6 - 30px);
@@ -1091,14 +1097,14 @@ main {
   top: 50%;
   left: 50%;
   /* min-width: 428px; */
-  width: 300px;
+  width: 100%;
   /* min-height: 584px; */
   /* height: 100vh; */
 
   @media screen and (min-width: 428px) {
     height: auto;
     min-width: 428px;
-    width: auto;
+    width: 408px;
     padding: 72px 24px 24px 24px;
   }
 
@@ -1305,7 +1311,9 @@ main {
   align-items: center;
   justify-content: center;
   margin-left: auto;
-
+  position: absolute;
+  top: 24px;
+  right: 24px;
   padding: 0;
   background-color: transparent;
   cursor: pointer;
@@ -1314,8 +1322,8 @@ main {
   outline: none;
   color: var(--cloud);
   border: 1px solid var(--cornflower);
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -1332,7 +1340,7 @@ main {
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding: 40px;
+  padding: 80px 0 40px 40px;
   background-color: var(--dairy);
   z-index: 200;
 
@@ -1355,15 +1363,15 @@ main {
 
 /* Mobile Navigation */
 
-.mob-menu-item {
+/* .mob-menu-item {
   margin-bottom: 32px;
-}
+} */
 
 .mob-menu-list {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  column-gap: 40px;
+  gap: 40px;
 }
 
 .mob-menu-link {
@@ -1415,9 +1423,10 @@ main {
 /* Mobile Socials */
 .mob-social-list {
   display: flex;
-  justify-content: center;
+  gap: 56px;
+  /* justify-content: center; */
   /* gap: 50px; */
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .mob-social-item {
