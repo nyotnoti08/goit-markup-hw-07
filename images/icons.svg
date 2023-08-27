@@ -173,8 +173,8 @@
     <path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"/>
     </symbol>
 
-    <symbol id="icon-hamburger-close" viewBox="0 0 24 24">
-    <path d="M8 .806 7.194 0 4 3.194.806 0 0 .806 3.194 4 0 7.194.806 8 4 4.806 7.194 8 8 7.194 4.806 4 8 .806Z"/>
+    <symbol id="icon-hamburger-close">
+    <path d="M8 .806 7.194 0 4 3.194.806 0 0 .806 3.194 4 0 7.194.806 8 4 4.806 7.194 8 8 7.194 4.806 4 8 .806Z"/></g><defs><clipPath id="a"><path d="M0 0h8v8H0z"/>
     </symbol>
 
   </defs>
