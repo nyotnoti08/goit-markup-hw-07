@@ -247,7 +247,7 @@ main {
   font-size: 36px;
 
   @media screen and (min-width: 1158px) {
-    font-size: 24px;
+    font-size: 36px;
   }
 }
 
@@ -260,7 +260,7 @@ main {
   gap: 72px;
 
   @media screen and (min-width: 428px) {
-    margin-left: -30px;
+    /* margin-left: -30px; */
     margin-top: -30px;
     display: flex;
     flex-wrap: wrap;
@@ -294,7 +294,7 @@ main {
     flex-basis: calc(100% / 4 - 30px);
     justify-content: center;
     align-content: center;
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -313,6 +313,7 @@ main {
     line-height: 1.14;
     margin-bottom: 10px;
     margin-top: 10px;
+    text-align: left;
   }
 
   @media screen and (min-width: 1158px) {
@@ -587,6 +588,10 @@ main {
 
 .contact {
   font-size: 12px;
+
+  @media screen and (min-width: 1158px) {
+    font-size: 16px;
+  }
 }
 
 .contacts-menu .contact {
